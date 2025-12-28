@@ -10,21 +10,21 @@ export const services: Service[] = [
   {
     id: "service-1",
     name: "Future Service 1",
-    description: "This slot is reserved for a future innovative service.",
+    description: "革新的なアイデアを形にするための、最初の実験プロジェクト。",
     url: "#",
     isComingSoon: true,
   },
   {
     id: "service-2",
     name: "Future Service 2",
-    description: "Something amazing will be built here.",
+    description: "生活を少しだけ便利にする、シンプルなユーティリティツール。",
     url: "#",
     isComingSoon: true,
   },
   {
     id: "service-3",
     name: "Future Service 3",
-    description: "Currently in the ideation phase.",
+    description: "まだ誰も見たことのない、新しい価値の創造。",
     url: "#",
     isComingSoon: true,
   }
