@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRight, FlaskConical } from "lucide-react"; // Flask icon fitting for a lab
+import { ArrowRight, Sparkles } from "lucide-react"; // Simpler icons
 import { Service } from "@/data/services";
 
 interface ServiceCardProps {
@@ -8,42 +8,39 @@ interface ServiceCardProps {
 
 export default function ServiceCard({ service }: ServiceCardProps) {
     return (
-        <div className="group relative flex flex-col justify-between overflow-hidden rounded-xl border border-white/10 bg-white/5 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-lab-accent/50 hover:shadow-[0_0_20px_var(--color-lab-accent-glow)]">
-            {/* Background decorations */}
-            <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-lab-accent/5 blur-3xl transition-opacity duration-300 group-hover:bg-lab-accent/10" />
-
+        <div className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white p-8 shadow-xl shadow-gray-200/40 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-gray-200/60">
             <div>
-                <div className="mb-4 flex items-center justify-between">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/5 text-lab-accent group-hover:bg-lab-accent/10">
-                        <FlaskConical className="h-5 w-5" />
+                <div className="mb-6 flex items-center justify-between">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gray-50 text-gray-900 transition-colors group-hover:bg-gray-100">
+                        <Sparkles className="h-5 w-5 stroke-[1.5]" />
                     </div>
                     {service.isComingSoon && (
-                        <span className="rounded-full border border-lab-accent/30 bg-lab-accent/10 px-3 py-1 text-xs font-medium text-lab-accent shadow-[0_0_10px_rgba(57,255,20,0.2)]">
-                            Coming Soon...
+                        <span className="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-500">
+                            Coming Soon
                         </span>
                     )}
                 </div>
 
-                <h3 className="mb-2 text-xl font-bold tracking-tight text-white group-hover:text-lab-accent transition-colors">
+                <h3 className="mb-3 text-2xl font-bold tracking-tight text-gray-900">
                     {service.name}
                 </h3>
-                <p className="mb-6 text-sm leading-relaxed text-white/60">
+                <p className="mb-8 text-base leading-relaxed text-gray-500">
                     {service.description}
                 </p>
             </div>
 
             <div className="mt-auto">
                 {service.isComingSoon ? (
-                    <div className="flex items-center gap-2 text-sm font-medium text-white/40 cursor-not-allowed">
-                        <span>Development in progress</span>
+                    <div className="flex items-center gap-2 text-sm font-medium text-gray-300 cursor-not-allowed">
+                        <span>In Development</span>
                     </div>
                 ) : (
                     <Link
                         href={service.url}
-                        className="inline-flex items-center gap-2 text-sm font-medium text-white transition-colors hover:text-lab-accent"
+                        className="inline-flex items-center gap-2 text-sm font-medium text-lab-accent transition-opacity hover:opacity-80"
                     >
                         Open Project
-                        <ArrowUpRight className="h-4 w-4" />
+                        <ArrowRight className="h-4 w-4" />
                     </Link>
                 )}
             </div>
