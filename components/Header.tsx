@@ -14,7 +14,7 @@ export default function Header() {
 
                 <nav className="flex items-center gap-6">
                     <a
-                        href="https://github.com"
+                        href="https://github.com/heibon8gou"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-white/70 transition-colors hover:text-lab-accent"
